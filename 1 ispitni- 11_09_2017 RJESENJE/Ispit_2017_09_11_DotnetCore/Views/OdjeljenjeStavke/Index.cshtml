@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Odjeljenja stavke</h2>
+
+@using Ispit_2017_09_11_DotnetCore.ViewModels
+@model Stavke_IndexVM
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Broj u dnevniku</th>
+            <th>Ucenik</th>
+            <th>Broj zakljucnih</th>
+            <th>Akcija Obrisi</th>
+            <th>Akcija Detalji</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model._stavke)
+        {
+            <tr>
+                <td>@i.broj_udnevniku</td>
+                <td>@i.ucenik_imePrezime</td>
+                <td>@i.broj_zakljucnih</td>
+                <td>
+                    <button id="dugmeBrisi-@i.odjeljenjaStavkeID" class="btn btn-danger">Izbrisi</button>
+
+                    <script>
+
+                        $("#dugmeBrisi-@i.odjeljenjaStavkeID").click(function (event) {
+
+                            $.get("/OdjeljenjeStavke/Izbrisi?stavkaID=@i.odjeljenjaStavkeID", function (rezultat,status) {
+
+                                $("#neki").html(rezultat);
+
+                            });
+                        });
+
+                    </script>
+
+                </td>
+                <td>
+                    <button id="dugmeDetalj-@i.odjeljenjaStavkeID" class="btn btn-info">Detalji</button>
+
+                    <script>
+
+                       $("#dugmeDetalj-@i.odjeljenjaStavkeID").click(function (event) {
+
+                            $.get("/OdjeljenjeStavke/Detalji?stavkaID=@i.odjeljenjaStavkeID", function (rezultat, status) {
+
+                                $("#neki").html(rezultat);
+                            });
+                        });
+
+                    </script>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<button id="button">Dodaj</button>
+
+<script>
+
+    $("#button").click(function (event) {
+
+        $.get("/OdjeljenjeStavke/Dodaj?odjeljenjeID=@Model.odjeljenjeID", function (rezultat, status) {
+
+            $("#neki").html(rezultat);
+        });
+    });
+
+</script>
+

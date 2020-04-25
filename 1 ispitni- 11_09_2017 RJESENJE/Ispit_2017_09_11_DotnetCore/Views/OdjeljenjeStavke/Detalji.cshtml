@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "Detalji";
+}
+
+<h2>Detalji</h2>
+
+@using Ispit_2017_09_11_DotnetCore.ViewModels
+@model Stavke_DetaljiVM
+
+<form>
+
+    <input asp-for="odjeljenjeID" hidden />
+
+    <input asp-for="odjeljenjeStavkeID" hidden />
+
+    Ucenik:<br />
+    <input asp-for="ucenikImePrezime" readonly />
+    <br />
+
+    Broj u dnevniki:<br />
+    <input asp-for="broj_Dnevniku" readonly />
+
+</form>
+

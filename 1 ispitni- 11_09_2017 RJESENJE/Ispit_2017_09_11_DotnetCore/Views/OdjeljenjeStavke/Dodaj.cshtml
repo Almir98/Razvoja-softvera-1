@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewData["Title"] = "Dodaj";
+}
+
+<h2>Dodaj</h2>
+
+@using Ispit_2017_09_11_DotnetCore.ViewModels
+@model StavkeDodajVM
+
+<form id="formaID" >
+
+    <input asp-for="odjeljenjeID" hidden />
+
+    Broj:<br />
+    <input asp-for="broj" />
+    <br />
+
+    Ucenik:<br />
+    <select asp-for="ucenikID" asp-items="Model.ucenici">
+        <option>Odaberite ucenika</option>
+    </select>
+    <br />
+
+</form>
+
+    <input class="btn btn-primary" id="submit" type="submit" value="Snimi" />
+
+<script>
+
+    $("#submit").click(function (event) {
+
+        var forma = $("#formaID");
+
+        $.ajax(
+            {
+                type: "POST",
+                url: "/OdjeljenjeStavke/Snimi",
+                data: forma.serialize(),
+                success: function (rezultat) {
+
+                    $("#neki").html(rezultat);
+                }
+
+            }
+        );
+        -
+    });
+
+</script>
+
+
+ 

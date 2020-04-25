@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "Dodaj";
+}
+
+<h2>Dodaj novo odjeljenje</h2>
+
+@using Ispit_2017_09_11_DotnetCore.ViewModels
+@model Odjeljenje_DodajVM
+
+<form asp-action="Snimi" method="post">
+
+    <input asp-for="odjeljenjeID" hidden />
+
+    Skolska godina:<br />
+    <input asp-for="skolskaGodina" />
+    <br />
+
+    Razred:<br />
+    <input asp-for="razred" />
+    <br />
+
+    Oznaka:<br />
+    <input asp-for="oznaka" />
+    <br />
+
+    Nastavnik:<br />
+    <select asp-for="nastavnikID" asp-items="Model.nastavnici">
+        <option>Odaberite nastavnika</option>
+    </select>
+    <br />
+    <br />
+
+
+    Niza odjeljenja:<br />
+    <select asp-for="odjeljenjeID" asp-items="Model.odjeljenja">
+        <option>Odaberite odjeljenja</option>
+    </select>
+    <br />
+    <br />
+
+    <input class="btn btn-info" type="submit" value="Snimi" />
+</form>
+

@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewData["Title"] = "Detalji";
+}
+
+<h2>Detalji 1 odjeljenja</h2>
+
+@using Ispit_2017_09_11_DotnetCore.ViewModels
+@model OdjeljenjaDetaljiVM
+
+<form>
+    <input asp-for="odjeljenjeID" hidden />
+
+    Skolska godina:<br />
+    <input asp-for="skolskagodina" readonly />
+    <br />
+
+    Razred:<br />
+    <input asp-for="razred" readonly />
+    <br />
+
+    Oznaka:<br />
+    <input asp-for="oznaka" readonly />
+    <br />
+
+    Razrednik:<br />
+    <input asp-for="razrednik_Ime" readonly />
+    <br />
+
+    Broj predmeta:<br />
+    <input asp-for="broj_predmeta" readonly />
+    <br />
+
+</form>
+<br /><br />
+
+
+<div id="neki" style="border:3px dashed">
+</div>
+
+
+<script>
+
+    $(document).ready(function (event) {
+
+        $.get("/OdjeljenjeStavke/Index?odjeljenjeID=@Model.odjeljenjeID", function (rezultat, status) {
+
+            $("#neki").html(rezultat);
+        });
+    });
+
+
+</script>
