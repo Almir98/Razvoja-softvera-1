@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewData["Title"] = "Uredi";
+}
+
+<h2>Uredi stavku</h2>
+
+@using Ispit_2017_02_15.ViewModels
+@model Studenti_EditVM
+
+<form id="formaID">
+
+    <input asp-for="stavkaID" hidden />
+
+    Student:<br />
+    <input asp-for="student" readonly />
+    <br />
+
+    Bodovi:<br />
+    <input asp-for="bodovi" min="0" max="100"/>
+    <br />
+
+</form>
+
+<br />
+
+<button id="snimi" class="btn btn-primary">Snimi</button>
+
+<script>
+
+    $("#snimi").click(function (event) {
+
+        var forma = $("#formaID");
+
+        $.ajax(
+            {
+                type: "POST",
+                url: '/Studenti/Snimi',
+                data: forma.serialize(),
+                success: function (rezultat) {
+
+                    $("#neki").html(rezultat);
+                }
+            });
+    });
+
+</script>
+
+
+
+
+

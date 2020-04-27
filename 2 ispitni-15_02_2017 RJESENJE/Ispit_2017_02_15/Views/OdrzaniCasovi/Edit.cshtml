@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewData["Title"] = "Edit";
+}
+
+@using Ispit_2017_02_15.ViewModels
+@model OdrzaniCasovi_EditVM
+
+<h2>Edit casa</h2>
+
+<form asp-action="Snimi" method="post">
+
+    <input asp-for="casID" hidden />
+
+    Nastavnik:<br />
+    <input asp-for="nastavnik" readonly />
+    <br />
+
+    Datum:<br />
+    <input asp-for="datum" />
+    <br />
+
+    Ak godina/Predmet:<br />
+    <input asp-for="akgodina" readonly />
+    <br />
+    <br />
+
+
+    <input type="submit" value="Snimi" class="btn btn-primary" />
+</form>
+
+<br /><br />
+
+
+
+<div id="neki" style="border:2px dashed">
+
+</div>
+
+
+<script>
+
+    $(document).ready(function (event) {
+
+        $.get("/Studenti/Index?odrzaniCasID=@Model.casID", function (rezultat, status) {
+
+            $("#neki").html(rezultat);
+
+        });
+    });
+
+</script>

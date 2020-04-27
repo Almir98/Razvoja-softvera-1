@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "Detalji";
+}
+
+@using Ispit_2017_02_15.ViewModels
+@model Studenti_Detalji_VM
+
+
+<h2>Detalji test</h2>
+
+<form>
+    <input asp-for="stavkaID" hidden />
+
+
+    Student:<br />
+    <input asp-for="student" readonly />
+    <br />
+
+    Bodovi:<br />
+    <input asp-for="bodovi" readonly />
+    <br />
+
+</form>

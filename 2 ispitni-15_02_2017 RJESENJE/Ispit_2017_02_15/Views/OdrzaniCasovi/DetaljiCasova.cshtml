@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "DetaljiCasova";
+}
+
+@using Ispit_2017_02_15.ViewModels
+@model OdrzaniCasovi_DetaljiCasovaVM
+
+
+<h2>Detalji casova za @Model.nastavnik</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Datum</th>
+            <th>Akademska godina</th>
+            <th>Predmet</th>
+            <th>Prisutnih</th>
+            <th>Akcija Uredi</th>
+            <th>Akcija izbrisi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model._casovi)
+        {
+        <tr>
+            <td>@i.datum</td>
+            <td>@i.akgodina</td>
+            <td>@i.predmet</td>
+            <td>@i.prisutnih</td>
+            <td>
+                <a class="btn btn-primary" href="/OdrzaniCasovi/Edit?casID=@i.casID">Edit</a>
+            </td>
+            <td>
+                <a class="btn btn-danger" href="/OdrzaniCasovi/Izbrisi?casID=@i.casID">Izbrisi</a>
+            </td>
+
+        </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+
+<a class="btn btn-primary" href="/OdrzaniCasovi/Dodaj?nastavnikID=@Model.nastavnikID">Dodaj</a>
