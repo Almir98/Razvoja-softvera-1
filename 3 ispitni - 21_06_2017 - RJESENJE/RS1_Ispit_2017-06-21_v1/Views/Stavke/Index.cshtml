@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+@using test.ViewModels
+
+@model Stavke_IndexVM
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Ucenik</th>
+            <th>Opci uspjeh</th>
+            <th>Bodovi</th>
+            <th>Oslobodjen</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model._lista)
+        {
+            <tr>
+                <td>@i.ucenik</td>
+                <td>@i.uspjeh</td>
+                <td>
+                    @if (i.oslobodjen)
+                    {
+                        <p>Oslobodjen</p>
+                    }
+                    else
+                    {
+                        @i.bodovi
+                    }
+                </td>
+                <td>
+                    @if (i.oslobodjen)
+                    {
+                        <p>Da</p>
+                    }
+                    else
+                    {
+                        <p>NE</p>
+                    }
+                </td>
+                <td>
+                    @if (i.oslobodjen)
+                    {
+                        <p>DA</p>
+                    }
+                    else
+                    {
+                       <p>NE</p>
+                    }
+                </td>
+                <td>
+                    <a class="btn btn-info" asp-action="Uredi" ajax-poziv="da" ajax-rezultat="neki" asp-route-stavkaID="@i.stavkaID">Uredi</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

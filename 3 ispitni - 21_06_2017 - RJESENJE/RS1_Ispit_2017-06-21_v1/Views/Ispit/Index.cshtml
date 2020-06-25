@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+@model Ispit_IndexVM
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Datum</th>
+            <th>Odjeljenje</th>
+            <th>Ispitivac</th>
+            <th>Prosjek bodova</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model._lista)
+        {
+        <tr>
+            <td>@i.datum</td>
+            <td>@i.odjeljenje</td>
+            <td>@i.ispitivac</td>
+            <td>@i.prosjek</td>
+            <td>
+            <a class="btn btn-primary" href="/Ispit/Detalji?maturskiID=@i.maturskiID">Detalji</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+<br />
+<a class="btn btn-primary" href="/Ispit/Dodaj">Dodaj novi maturski</a>

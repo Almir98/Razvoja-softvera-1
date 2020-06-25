@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "Uredi";
+}
+
+<h2>Uredi</h2>
+
+@using test.ViewModels
+@model Stavke_UrediVM
+
+<form asp-action="Snimi" ajax-poziv="da" ajax-rezultat="neki">
+    <input asp-for="stavkaID" hidden />
+
+    Ucenik:<br />
+    <input asp-for="ucenik" readonly />
+    <br />
+
+    Bodovi:<br />
+    <input asp-for="bodovi" />
+    <br />
+
+    
+    <button type="submit" class="btn btn-primary">Snimi</button>
+</form>

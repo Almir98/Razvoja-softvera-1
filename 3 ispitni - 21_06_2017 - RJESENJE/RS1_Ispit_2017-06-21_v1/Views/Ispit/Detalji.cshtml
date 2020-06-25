@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "Detalji";
+}
+
+<h2>Detalji</h2>
+
+
+@using test.ViewModels
+@model Ispit_DetaljiVM
+
+<form>
+    <input asp-for="maturskiID" hidden />
+
+    Ispitivac:<br />
+    <input asp-for="ispitivac" readonly />
+    <br />
+
+    Datum:<br />
+    <input asp-for="datum" readonly />
+    <br />
+
+    Odjeljenje:<br />
+    <input asp-for="odjeljenje" readonly />
+    <br />
+
+
+</form>
+
+<br /><br />
+
+<div id="neki" style="border:2px dashed"></div>
+
+
+<script>
+
+    $(document).ready(function (event) {
+
+        $.get("/Stavke/Index?maturskiID=@Model.maturskiID", function (rezultat, status) {
+
+            $("#neki").html(rezultat);
+        });
+    })
+</script>

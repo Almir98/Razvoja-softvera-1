@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "Dodaj";
+}
+
+<h2>Dodaj</h2>
+
+@using test.ViewModels
+@model Ispit_DodajVM
+
+
+
+<form asp-action="Snimi" method="post">
+
+    <input asp-for="nastavnikID" hidden />
+
+    Ispitivac:<br />
+    <input asp-for="nastavnik" readonly />
+    <br />
+
+    Datum:<br />
+    <input asp-for="datum" />
+    <br />
+
+    Odjeljenje:<br />
+    <select asp-for="odjeljenjeID" asp-items="@Model._lista">
+        <option>Odaberite</option>
+    </select>
+    <br /><br />
+
+    <input type="submit" value="Snimi" class="btn btn-primary" />
+</form>
