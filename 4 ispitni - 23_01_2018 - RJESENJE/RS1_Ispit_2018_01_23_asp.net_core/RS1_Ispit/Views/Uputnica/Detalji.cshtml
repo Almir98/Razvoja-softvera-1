@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewData["Title"] = "Detalji";
+}
+
+<h2>Detalji</h2>
+
+@model Uputnica_DetaljiVM
+
+<form>
+    <input asp-for="uputnicaID" hidden />
+
+    Datum uputnice:<br />
+    <input asp-for="datum" readonly />
+    <br /><br />
+
+    Pacijent :<br />
+    <input asp-for="pacijent" readonly />
+    <br /><br />
+
+    Datum rezultata:<br />
+    <input asp-for="datumr" readonly />
+    <br /><br />
+
+    <a class="btn btn-warning" href="/Uputnica/Zakljucaj?uputnicaID=@Model.uputnicaID">Zakljucaj</a>
+
+</form>
+<br /><br />
+
+
+<div id="divID" style="border:2px dashed"></div>
+
+<script>
+
+    $(document).ready(function (event) {
+
+        $.get("/AjaxStavke/Index?uputnicaID=@Model.uputnicaID", function (rezultat, status) {
+
+            $("#divID").html(rezultat);
+        });
+    });
+</script>

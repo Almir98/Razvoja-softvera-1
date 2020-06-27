@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "UrediModalitet";
+}
+
+<h2>UrediModalitet</h2>
+
+@model Stavke_UrediMVM
+
+
+<form asp-action="SnimiModalitet" ajax-poziv="da" ajax-rezultat="divID">
+
+    <input asp-for="stavkaID" hidden />
+
+    Pretraga:<br />
+    <input asp-for="pretraga" readonly />
+    <br /><br />
+
+    Vrijednost:<br />
+               <select asp-for="nekiID">
+                   <option>Odaberite</option>
+                   <option name="nekiID" value="Pristune">Prisutne</option>
+                   <option name="nekiID" value="Nesto">Nesto</option>
+                   <option name="nekiID" value="Nema">Nema</option>
+               </select>
+    <br /><br />
+
+    <button class="btn btn-primary">Snimi</button>
+
+</form> 

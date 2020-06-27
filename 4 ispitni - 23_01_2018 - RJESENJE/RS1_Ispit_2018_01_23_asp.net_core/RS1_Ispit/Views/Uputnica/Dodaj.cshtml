@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "Dodaj";
+}
+
+<h2>Dodaj</h2>
+
+@model Uputnica_DodajVM
+
+
+<form asp-action="Snimi" method="post">
+
+    Ljekar:<br />
+    <select asp-for="ljekarID" asp-items="@Model._ljekari">
+        <option>Odaberite</option>
+    </select>
+    <br /><br />
+
+    Datum:<br />
+    <input asp-for="datum" />
+    <br /><br />
+
+
+    Pacijent:<br />
+    <select asp-for="pacijentID" asp-items="@Model._pacijenti">
+        <option>Odaberite</option>
+    </select>
+    <br /><br />
+
+    Vrsta pretrage:<br />
+    <select asp-for="vrstaID" asp-items="@Model._vrste">
+        <option>Odaberite</option>
+    </select>
+    <br /><br />
+
+    <input type="submit" value="Snimi" class="btn btn-primary" />
+</form>

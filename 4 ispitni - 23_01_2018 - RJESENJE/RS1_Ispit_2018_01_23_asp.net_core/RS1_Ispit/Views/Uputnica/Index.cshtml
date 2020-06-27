@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+@model Uputnica_IndexVM
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Uputio</th>
+            <th>Pacijent</th>
+            <th>Vrsta pretrage</th>
+            <th>Datum rezultata</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model._lista)
+        {
+        <tr>
+            <td>@i.uputio</td>
+            <td>@i.pacijent</td>
+            <td>@i.vrsta</td>
+            <td>@i.datum</td>
+            <td>
+                <a class="btn btn-primary" href="/Uputnica/Detalji?uputnicaID=@i.uputnicaID">Detalji</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+<br />
+
+<a class="btn btn-primary" href="/Uputnica/Dodaj">Dodaj novu uputnicu</a>

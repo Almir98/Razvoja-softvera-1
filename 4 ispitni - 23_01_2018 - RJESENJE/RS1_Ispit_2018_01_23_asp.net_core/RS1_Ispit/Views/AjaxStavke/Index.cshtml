@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+@model Stavke_IndexVM
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Pretraga</th>
+            <th>Izmjerena vrijednost</th>
+            <th>JMJ</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model._lista)
+        {
+            <tr>
+                <td>@i.pretraga</td>
+                <td>@i.izmjereno</td>
+                <td>
+                    @if (i.vrsta == 0)
+                    {
+                        @i.JMJ
+                    }
+                    else
+                    {
+                    }
+                </td>
+                <td>
+                    @if (i.vrsta == 0)
+                    {
+                        <a class="btn btn-primary" ajax-poziv="da" ajax-rezultat="divID" asp-action="UrediNumericka" asp-route-stavkaID="@i.stavkaID">Uredi numericka</a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-info" ajax-poziv="da" ajax-rezultat="divID" asp-action="UrediModalitet" asp-route-stavkaID="@i.stavkaID">Uredi modalitet</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
