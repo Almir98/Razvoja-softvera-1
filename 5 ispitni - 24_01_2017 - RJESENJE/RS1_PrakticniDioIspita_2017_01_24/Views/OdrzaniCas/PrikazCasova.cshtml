@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "PrikazCasova";
+}
+@using RS1_PrakticniDioIspita_2017_01_24.ViewModels
+@model OdrzaniCas_PrikazCasovaVM
+
+
+<h2>Prikaz casova za nastavnika @Model.nastavnikImePrezime</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Datum casa</th>
+            <th>Odjeljenje</th>
+            <th>Predmet</th>
+            <th>Akcija Edit</th>
+            <th>Akcija Izbrisi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model._listaPredmeta)
+        {
+        <tr>
+            <td>@i.datum</td>
+            <td>@i.odjeljenje</td>
+            <td>@i.predmetNaziv</td>
+            <td>
+                <a class="btn btn-warning" href="/OdrzaniCas/Edit?odrzaniCasID=@i.odrzaniCasID">Edit</a>
+            </td>
+            <td>
+                <a class="btn btn-danger" href="/OdrzaniCas/Izbrisi?casID=@i.odrzaniCasID">Izbrisi</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-primary" href="/OdrzaniCas/Dodaj?nastavnikID=@Model.nastavnikID">Dodaj</a>

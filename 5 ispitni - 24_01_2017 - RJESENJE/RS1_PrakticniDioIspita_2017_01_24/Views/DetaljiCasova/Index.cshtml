@@ -1,0 +1,113 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+@using RS1_PrakticniDioIspita_2017_01_24.ViewModels
+@model DetaljiCasova_IndexVM
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Ucenik</th>
+            <th>Ocjena</th>
+            <th>Prisutan</th>
+            <th>Akcija Uredi</th>
+            <th>Akcija izbrisi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model._detalji)
+        {
+        <tr>
+            <th>@i.ucenikImePrezime</th>
+            <th>
+                @if (i.prisutan == true)
+                {
+                    @i.ocjena
+                }
+                else
+                {
+                    // nista ne ispisuj jer nije prisutan
+                }
+            </th>
+            <th>
+                @if (i.odsutan == false)
+                {
+                    <button id="zamjena-@i.detaljCasaID" class="btn btn-success">Prisutan</button>
+                }
+                else
+                {
+                    <button id="zamjena-@i.detaljCasaID" class="btn btn-danger">Odsutan</button>
+                }
+
+                <script>
+
+                    $("#zamjena-@i.detaljCasaID").click(function (event) {
+
+                        $("/DetaljiCasova/Prisustvo?ID=@i.detaljCasaID", function (rezultat, status)
+                        {
+                            $("#neki").html(rezultat);
+                        });
+
+
+                    });
+
+                </script>
+
+            </th>
+            <th>
+
+                @if (i.prisutan == true)
+                {
+                    <button id="UrediPrisutan-@i.detaljCasaID" class="btn btn-primary">Uredi</button>
+                }
+                else
+                {
+                    <button id="UrediOdsutan-@i.detaljCasaID" class="btn btn-info">Uredi</button>
+                }
+
+                <script>
+
+                    $("#UrediPrisutan-@i.detaljCasaID").click(function (event) {
+
+                        $.get("/DetaljiCasova/UrediPrisutan?ID=@i.detaljCasaID", function (rezultat, status) {
+
+                            $("#neki").html(rezultat);
+
+                        });
+                    });
+
+                    $("#UrediOdsutan-@i.detaljCasaID").click(function (event) {
+
+                        $.get("/DetaljiCasova/UrediOdsutan?ID=@i.detaljCasaID", function (rezultat, status) {
+
+                            $("#neki").html(rezultat);
+
+                        });
+                    });
+
+                </script>
+
+            </th>
+            <th>
+                <button id="izbrisi-@i.detaljCasaID" class="btn btn-danger">Izbrisi</button>
+
+                <script>
+
+                    $("#izbrisi-@i.detaljCasaID").click(function (event) {
+
+                        $.get("/DetaljiCasova/Izbrisi?ID=@i.detaljCasaID", function (rezultat, status) {
+
+                            $("#neki").html(rezultat);
+                        });
+                    });
+                </script>
+
+            </th>
+        </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,26 @@
+C:\Users\HOME\Desktop\finalna priprema rs1\24_01_2017_PocetniProjekt\RS1_PrakticniDioIspita_2017_01_24\bin\Debug\netcoreapp2.0\appsettings.json
+C:\Users\HOME\Desktop\finalna priprema rs1\24_01_2017_PocetniProjekt\RS1_PrakticniDioIspita_2017_01_24\bin\Debug\netcoreapp2.0\bundleconfig.json
+C:\Users\HOME\Desktop\finalna priprema rs1\24_01_2017_PocetniProjekt\RS1_PrakticniDioIspita_2017_01_24\bin\Debug\netcoreapp2.0\Properties\launchSettings.json
+C:\Users\HOME\Desktop\finalna priprema rs1\24_01_2017_PocetniProjekt\RS1_PrakticniDioIspita_2017_01_24\bin\Debug\netcoreapp2.0\RS1_PrakticniDioIspita_2017_01_24.deps.json
+C:\Users\HOME\Desktop\finalna priprema rs1\24_01_2017_PocetniProjekt\RS1_PrakticniDioIspita_2017_01_24\bin\Debug\netcoreapp2.0\RS1_PrakticniDioIspita_2017_01_24.runtimeconfig.json
+C:\Users\HOME\Desktop\finalna priprema rs1\24_01_2017_PocetniProjekt\RS1_PrakticniDioIspita_2017_01_24\bin\Debug\netcoreapp2.0\RS1_PrakticniDioIspita_2017_01_24.runtimeconfig.dev.json
+C:\Users\HOME\Desktop\finalna priprema rs1\24_01_2017_PocetniProjekt\RS1_PrakticniDioIspita_2017_01_24\bin\Debug\netcoreapp2.0\RS1_PrakticniDioIspita_2017_01_24.dll
+C:\Users\HOME\Desktop\finalna priprema rs1\24_01_2017_PocetniProjekt\RS1_PrakticniDioIspita_2017_01_24\bin\Debug\netcoreapp2.0\RS1_PrakticniDioIspita_2017_01_24.pdb
+C:\Users\HOME\Desktop\finalna priprema rs1\24_01_2017_PocetniProjekt\RS1_PrakticniDioIspita_2017_01_24\obj\Debug\netcoreapp2.0\RS1_PrakticniDioIspita_2017_01_24.csprojAssemblyReference.cache
+C:\Users\HOME\Desktop\finalna priprema rs1\24_01_2017_PocetniProjekt\RS1_PrakticniDioIspita_2017_01_24\obj\Debug\netcoreapp2.0\RS1_PrakticniDioIspita_2017_01_24.AssemblyInfoInputs.cache
+C:\Users\HOME\Desktop\finalna priprema rs1\24_01_2017_PocetniProjekt\RS1_PrakticniDioIspita_2017_01_24\obj\Debug\netcoreapp2.0\RS1_PrakticniDioIspita_2017_01_24.AssemblyInfo.cs
+C:\Users\HOME\Desktop\finalna priprema rs1\24_01_2017_PocetniProjekt\RS1_PrakticniDioIspita_2017_01_24\obj\Debug\netcoreapp2.0\RS1_PrakticniDioIspita_2017_01_24.dll
+C:\Users\HOME\Desktop\finalna priprema rs1\24_01_2017_PocetniProjekt\RS1_PrakticniDioIspita_2017_01_24\obj\Debug\netcoreapp2.0\RS1_PrakticniDioIspita_2017_01_24.pdb
+C:\Users\Almir Tihak\Desktop\24_01_2017_PocetniProjekt\RS1_PrakticniDioIspita_2017_01_24\bin\Debug\netcoreapp2.0\bundleconfig.json
+C:\Users\Almir Tihak\Desktop\24_01_2017_PocetniProjekt\RS1_PrakticniDioIspita_2017_01_24\bin\Debug\netcoreapp2.0\Properties\launchSettings.json
+C:\Users\Almir Tihak\Desktop\24_01_2017_PocetniProjekt\RS1_PrakticniDioIspita_2017_01_24\bin\Debug\netcoreapp2.0\appsettings.json
+C:\Users\Almir Tihak\Desktop\24_01_2017_PocetniProjekt\RS1_PrakticniDioIspita_2017_01_24\bin\Debug\netcoreapp2.0\RS1_PrakticniDioIspita_2017_01_24.deps.json
+C:\Users\Almir Tihak\Desktop\24_01_2017_PocetniProjekt\RS1_PrakticniDioIspita_2017_01_24\bin\Debug\netcoreapp2.0\RS1_PrakticniDioIspita_2017_01_24.runtimeconfig.json
+C:\Users\Almir Tihak\Desktop\24_01_2017_PocetniProjekt\RS1_PrakticniDioIspita_2017_01_24\bin\Debug\netcoreapp2.0\RS1_PrakticniDioIspita_2017_01_24.runtimeconfig.dev.json
+C:\Users\Almir Tihak\Desktop\24_01_2017_PocetniProjekt\RS1_PrakticniDioIspita_2017_01_24\bin\Debug\netcoreapp2.0\RS1_PrakticniDioIspita_2017_01_24.dll
+C:\Users\Almir Tihak\Desktop\24_01_2017_PocetniProjekt\RS1_PrakticniDioIspita_2017_01_24\bin\Debug\netcoreapp2.0\RS1_PrakticniDioIspita_2017_01_24.pdb
+C:\Users\Almir Tihak\Desktop\24_01_2017_PocetniProjekt\RS1_PrakticniDioIspita_2017_01_24\obj\Debug\netcoreapp2.0\RS1_PrakticniDioIspita_2017_01_24.csprojAssemblyReference.cache
+C:\Users\Almir Tihak\Desktop\24_01_2017_PocetniProjekt\RS1_PrakticniDioIspita_2017_01_24\obj\Debug\netcoreapp2.0\RS1_PrakticniDioIspita_2017_01_24.AssemblyInfoInputs.cache
+C:\Users\Almir Tihak\Desktop\24_01_2017_PocetniProjekt\RS1_PrakticniDioIspita_2017_01_24\obj\Debug\netcoreapp2.0\RS1_PrakticniDioIspita_2017_01_24.AssemblyInfo.cs
+C:\Users\Almir Tihak\Desktop\24_01_2017_PocetniProjekt\RS1_PrakticniDioIspita_2017_01_24\obj\Debug\netcoreapp2.0\RS1_PrakticniDioIspita_2017_01_24.dll
+C:\Users\Almir Tihak\Desktop\24_01_2017_PocetniProjekt\RS1_PrakticniDioIspita_2017_01_24\obj\Debug\netcoreapp2.0\RS1_PrakticniDioIspita_2017_01_24.pdb

@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Prikaz nastavnika</h2>
+
+@using RS1_PrakticniDioIspita_2017_01_24.ViewModels
+@model OdrzaniCas_IndexVM
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Ime prezime</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model._listaNastavnika)
+        {
+            <tr>
+                <td>@i.nastavnikImePrezime</td>
+                <td>
+                    <a class="btn btn-primary" href="/OdrzaniCas/PrikazCasova?nastavnikID=@i.nastavnikID">Detalji</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+
+
+</table>
+
+
+
+
+

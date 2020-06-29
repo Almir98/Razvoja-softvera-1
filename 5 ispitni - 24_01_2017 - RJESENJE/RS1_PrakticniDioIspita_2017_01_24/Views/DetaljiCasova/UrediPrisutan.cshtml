@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewData["Title"] = "UrediPrisutan";
+}
+
+<h2>Uredi prisutan</h2>
+
+@using RS1_PrakticniDioIspita_2017_01_24.ViewModels
+@model DetaljiCasova_UrediPrisutanVM
+
+
+<form id="formaID">
+
+    <input asp-for="detaljCasaID" hidden />
+
+    Ucenik:<br />
+    <input asp-for="ucenikImePrezime" readonly />
+    <br />
+
+    Ocjena:<br />
+    <input asp-for="ocjena" min="5" max="10" />
+    <br />
+    <br />
+
+
+</form>
+
+<button id="snimiPrisutan" class="btn btn-primary">Snimi prisutan</button>
+
+<script>
+
+    $("#snimiPrisutan").click(function (event) {
+
+        var forma = $("#formaID");
+
+        $.ajax(
+            {
+                type: "POST",
+                url: '/DetaljiCasova/SnimiPrisutan',
+                data: forma.serialize(),
+                success: function (rezultat) {
+
+                    $("#neki").html(rezultat);
+                }
+
+            });
+        
+    });
+</script>
+

@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using RS1_PrakticniDioIspita_2017_01_24.ViewModels
+@model OdrzaniCas_EditVM
+
+
+<form asp-action="SnimiEdit" method="post">
+
+    <input asp-for="nastavnikID" hidden />
+
+    <input asp-for="odrzaniCasID" hidden />
+
+    Datum:<br />
+    <input asp-for="datum" readonly />
+    <br />
+
+    Odjeljenje / Predmet:<br />
+    <select asp-for="godinaPredmetID" asp-items="Model.lista">
+        <option>Odaberite</option>
+    </select>
+    <br />
+
+    <input class="btn btn-primary" type="submit" value="Snimi" />
+
+</form>
+
+<br /><br />
+
+<div id="neki" style="border:3px dashed"></div>
+
+<script>
+
+    $(document).ready(function (event) {
+
+        $.get("/DetaljiCasova/Index?odrzaniCasID=@Model.odrzaniCasID", function (rezultat, status) {
+
+            $("#neki").html(rezultat);
+
+        });
+    });
+</script>
+
+
+
+
+
+

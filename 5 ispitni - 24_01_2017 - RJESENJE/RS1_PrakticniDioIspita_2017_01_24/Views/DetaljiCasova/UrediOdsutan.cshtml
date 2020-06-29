@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewData["Title"] = "UrediOdsutan";
+}
+
+<h2>Uredi odsutan</h2>
+
+@using RS1_PrakticniDioIspita_2017_01_24.ViewModels
+@model DetaljiCasova_UrediOdsutanVM
+
+<form id="formaID2">
+
+    <input asp-for="detaljCasID" hidden />
+
+    Ucenik:<br />
+    <input asp-for="ucenikImePrezime" readonly/>
+    <br />
+
+    Opravdano odsutan:<br />
+    <input asp-for="odabrano" />
+    <br />
+
+
+</form>
+
+<br /><br />
+
+<button id="snimiOdsutan" class="btn btn-primary">Snimi odsutan</button>
+
+<script>
+
+    $("#snimiOdsutan").click(function (event) {
+
+        var forma = $("#formaID2");
+
+        $.ajax(
+            {
+                type: "POST",
+                url: '/DetaljiCasova/SnimiOdsutan',
+                data: forma.serialize(),
+                success: function (rezultat) {
+
+                    $("#neki").html(rezultat);
+                }
+
+            });
+    });
+
+</script>
+

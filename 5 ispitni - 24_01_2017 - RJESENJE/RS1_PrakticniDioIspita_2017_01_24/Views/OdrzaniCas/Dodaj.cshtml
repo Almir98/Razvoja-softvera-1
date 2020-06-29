@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "Dodaj";
+}
+
+@using RS1_PrakticniDioIspita_2017_01_24.ViewModels
+@model OdrzaniCas_DodajVM
+
+
+<h2>Dodaj novi cas za profesore : @Model.nastavnikImePrezime</h2>
+
+<form asp-action="Snimi" method="post">
+
+    <input asp-for="nastavnikID" hidden />
+
+    Datum:<br />
+    <input asp-for="datum" readonly />
+    <br />
+    <br />
+
+    Odjeljenje / Predmet:<br />
+    <select asp-for="godinaPredmetID" asp-items="Model.lista">
+        <option>Odaberite</option>
+    </select>
+    <br />
+    <br />
+
+    <input type="submit" class="btn btn-primary" value="Snimi" />
+</form>
+
+
