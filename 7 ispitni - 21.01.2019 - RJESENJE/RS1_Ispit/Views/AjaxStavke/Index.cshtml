@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+@model Stavke_IndexVM
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Ucenik</th>
+            <th>Prosjek</th>
+            <th>Pristupio</th>
+            <th>Rezultat</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model._lista)
+        {
+            <tr>
+                <td>@i.ucenik</td>
+                <td>@i.prosjek</td>
+                <td>
+                    @if (i.pristupio)
+                    {
+                        <a ajax-poziv="da" asp-action="Prisutan" asp-route-stavkaID="@i.stavkaID" ajax-rezultat="divID" class="btn btn-success">Prisutan</a>
+                    }
+                    else
+                    {
+                        <a ajax-poziv="da" asp-action="Prisutan" ajax-rezultat="divID" asp-route-stavkaID="@i.stavkaID" class="btn btn-danger">Odsutan</a>
+                    }
+                </td>
+                <td>
+                    @if (i.pristupio)
+                    {
+                        <input id="@i.stavkaID" value="@i.rezultat" />
+                   
+                        <a ajax-poziv="daa" asp-action="SnimiBodove" ajax-id="@i.stavkaID" asp-route-stavkaID="@i.stavkaID"
+                           asp-route-bodovi="@i.rezultat" class="btn btn-primary">Snimi</a>
+                        
+                    }
+                </td>
+                <td>
+                    @if (i.pristupio)
+                    {
+                        <a ajax-poziv="da" ajax-rezultat="divID" asp-route-stavkaID="@i.stavkaID" asp-action="Uredi" class="btn btn-primary">Uredi</a>
+                    }
+                    else
+                    {
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

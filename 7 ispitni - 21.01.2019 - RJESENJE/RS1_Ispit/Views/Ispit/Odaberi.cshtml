@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "Odaberi";
+}
+
+@model Ispit_OdaberiVM
+
+<h2>Odaberi maturske za nastavnika @Model.nastavnik</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Datum</th>
+            <th>Skola</th>
+            <th>Predmet</th>
+            <th>Odsutni</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model._lista)
+        {
+        <tr>
+            <td>@i.datum</td>
+            <td>@i.skola</td>
+            <td>@i.predmet</td>
+            <td>
+                @foreach (var o in i._odustni)
+                {
+                    <span>@o,</span>
+                }
+            </td>
+            <td>
+                <a class="btn btn-primary" href="/Ispit/Uredi?maturskiID=@i.maturskiID">Uredi</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<br /><br />
+
+<a class="btn btn-primary" href="/Ispit/Dodaj?nastavnikID=@Model.nastavnikID">Dodaj novi maturski</a>
+
