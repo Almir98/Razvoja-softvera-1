@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+@model Nastava_IndexVM
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nastavnik</th>
+            <th>Broj casova</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model._lista)
+        {
+        <tr>
+            <td>@i.nastavnik</td>
+            <td>@i.broj_casova</td>
+            <td>
+                <a class="btn btn-primary" href="/Nastava/Odaberi?nastavnikID=@i.nastavnikID" >Odaberi</a>
+
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

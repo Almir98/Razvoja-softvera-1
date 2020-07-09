@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "UrediOdsutan";
+}
+
+<h2>UrediOdsutan</h2>
+
+@model Stavke_UrediOdsutanVM
+
+
+<form asp-action="SnimiOdsutan" ajax-poziv="da" ajax-rezultat="divID">
+
+    <input asp-for="stavkaID" hidden />
+
+    Ucenik:<br />
+    <input asp-for="ucenik" readonly />
+    <br />
+
+    Napomena:<br />
+    <input asp-for="napomena"  />
+    <br />
+
+    Opravdano:<br />
+    <input type="checkbox" asp-for="opravdano" />
+    <br /><br />
+
+
+
+    <button type="submit" class="btn btn-primary">Snimi</button>
+</form>

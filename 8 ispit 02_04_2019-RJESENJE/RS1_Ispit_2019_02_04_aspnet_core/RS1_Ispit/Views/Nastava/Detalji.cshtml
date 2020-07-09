@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewData["Title"] = "Detalji";
+}
+
+<h2>Detalji</h2>
+
+@model Nastava_DetaljiVM
+
+
+<form>
+
+    <input asp-for="odrzaniID" hidden />
+
+    Nastavnik:<br />
+    <input asp-for="nastavnik" readonly />
+    <br />
+
+    Datum:<br />
+    <input asp-for="datum" readonly />
+    <br />
+
+    Skola / odjeljenje / predmet:<br />
+    <input asp-for="skupa" readonly style="width:300px" />
+    <br />
+
+    Sadrzaj:<br />
+    <input asp-for="napomena" readonly />
+    <br /><br />
+    
+    <a class="btn btn-warning" href="/Nastava/Zakljucaj?odrzaniID=@Model.odrzaniID">Zakljucaj</a>
+
+</form>
+<br /><br />
+
+
+<div id="divID" style="border:2px dashed">
+</div>
+
+
+<script>
+
+    $(document).ready(function (event) {
+
+        $.get("/AjaxStavke/Index?odrzaniID=@Model.odrzaniID", function (rezultat, status) {
+
+            $("#divID").html(rezultat);
+        });
+    });
+</script> 
