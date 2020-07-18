@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewData["Title"] = "Uredi";
+}
+
+<h2>Uredi</h2>
+
+@model Ispit_UrediVM
+
+<form asp-action="SnimiUredi" method="post">
+
+    <input asp-for="popravniID" hidden />
+
+    Predmet:<br />
+    <input asp-for="predmet" readonly />
+    <br />
+
+    Datum ispita:<br />
+    <input asp-for="datum" readonly />
+    <br />
+
+    Skola:<br />
+    <input asp-for="skola" readonly />
+    <br />
+
+    Skolska godina:<br />
+    <input asp-for="skolska" readonly />
+    <br />
+
+    Odjeljenje:<br />
+    <input asp-for="odjeljenje" />
+    <br />
+
+</form>
+
+<br /><br />
+
+<div id="neki" style="border:2px dashed">
+
+
+</div>
+
+<script>
+
+    $(document).ready(function (event) {
+
+        $.get("/PopravniDetalji/Index?popravniID=@Model.popravniID", function (rezultat, status) {
+
+            $("#neki").html(rezultat);
+
+        });
+    })
+
+
+
+</script>

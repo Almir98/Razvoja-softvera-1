@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "Odaberi";
+}
+
+@model Ispit_OdaberiVM
+
+<h2>Odaberi za popravni @Model.odjeljenje</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Datum popravnog</th>
+            <th>Predmet</th>
+            <th>Broj ucesnika na popravnom</th>
+            <th>Akcija</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model._lista)
+        {
+            <tr>
+                <td>@i.datum</td>
+                <td>@i.predmet</td>
+                <td>@i.broj_Ucesnika</td>
+                <td>
+                    <a class="btn btn-primary" href="/Ispit/Uredi?popravniID=@i.popravniID">Uredi</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br /><br />
+
+<a class="btn btn-primary" href="/Ispit/Dodaj?odjeljenjeID=@Model.odjeljenjeID">Dodaj novi popravni </a>

@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "Uredi";
+}
+
+<h2>Uredi</h2>
+
+@model PopravniDetalji_UrediVM
+
+<form id="forma1">
+
+    <input asp-for="stavkaID" hidden />
+
+    Ucenik:<br />
+    <input asp-for="ucenik" readonly />
+    <br />
+
+    Bodovi:<br />
+    <input asp-for="bodovi" min="0" max="100" />
+    <br />
+
+</form>
+
+<button id="snimi" class="btn btn-primary">Snimi</button>
+
+<script>
+
+    $("#snimi").click(function (event) {
+
+        var forma = $("#forma1");
+
+        $.ajax(
+            {
+                type: "POST",
+                url: '/PopravniDetalji/Snimi',
+                data: forma.serialize(),
+                success: function (rezultat) {
+
+                    $("#neki").html(rezultat);
+                }
+            });
+    })
+
+</script>

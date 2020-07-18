@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+@model PopravniDetalji_IndexVM
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Ucenik</th>
+            <th>Broj u dnevniku</th>
+            <th>Odjeljenje</th>
+            <th>Pristupio</th>
+            <th>Rezultat</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model._lista)
+        {
+            <tr>
+                <td>@i.ucenik</td>
+                <td>@i.brojDnevnik</td>
+                <td>@i.odjeljenje</td>
+                <td>
+                    @if (i.pristupio)
+                    {
+                        <button id="promjeni-@i.stavkaID" class="btn btn-success">Prisutan</button>
+                    }
+                    else
+                    {
+                        <button id="promjeni-@i.stavkaID" class="btn btn-danger">Odsutan</button>
+                    }
+
+                    <script>
+
+                        $("#promjeni-@i.stavkaID").click(function (event) {
+
+                            $.get("/PopravniDetalji/Promjeni?stavkaID=@i.stavkaID", function (rezultat, status) {
+
+                                $("#neki").html(rezultat);
+
+                            });
+                        });
+                    </script>
+                </td>
+                <td>
+                @if (i.pristupio)
+                {
+                    @i.rezultat
+                }
+                else
+                {
+                }
+                </td>
+                <td>
+                    <button id="uredi-@i.stavkaID" class="btn btn-primary" >Uredi</button>
+
+                    <script>
+
+                        $("#uredi-@i.stavkaID").click(function (event) {
+
+                            $.get("/PopravniDetalji/Uredi?stavkaID=@i.stavkaID", function (rezultat, status) {
+
+                                $("#neki").html(rezultat);
+
+                            });
+                        });
+                    </script>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

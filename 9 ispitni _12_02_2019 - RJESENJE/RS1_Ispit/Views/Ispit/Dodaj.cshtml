@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "Dodaj";
+}
+
+<h2>Dodaj</h2>
+
+@model Ispit_DodajVM
+
+<form asp-action="Snimi" method="post">
+
+    <input asp-for="odjeljenjeID" hidden />
+
+    Predmet:<br />
+    <select asp-for="predmetID" asp-items="@Model._predmeti">
+        <option>Odaberite</option>
+    </select>
+    <br /><br />
+
+    Datum ispita:<br />
+    <input asp-for="datum" />
+    <br />
+
+    Skola:<br />
+    <input asp-for="skola" readonly />
+    <br />
+
+    Skolska:<br />
+    <input asp-for="skolska" readonly />
+    <br />
+
+    Odjeljenje:<br />
+    <input asp-for="odjeljenje" readonly />
+    <br />
+    <br />
+    
+    <input type="submit" value="Snimi" class="btn btn-primary" />
+</form>
