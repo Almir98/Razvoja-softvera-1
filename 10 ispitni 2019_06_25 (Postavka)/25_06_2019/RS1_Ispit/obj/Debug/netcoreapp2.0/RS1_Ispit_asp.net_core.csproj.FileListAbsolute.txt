@@ -1,0 +1,14 @@
+C:\Users\Almir Tihak\Desktop\6-ispit_2019_06_25_start\25_06_2019\RS1_Ispit\bin\Debug\netcoreapp2.0\appsettings.Development.json
+C:\Users\Almir Tihak\Desktop\6-ispit_2019_06_25_start\25_06_2019\RS1_Ispit\bin\Debug\netcoreapp2.0\appsettings.json
+C:\Users\Almir Tihak\Desktop\6-ispit_2019_06_25_start\25_06_2019\RS1_Ispit\bin\Debug\netcoreapp2.0\bundleconfig.json
+C:\Users\Almir Tihak\Desktop\6-ispit_2019_06_25_start\25_06_2019\RS1_Ispit\bin\Debug\netcoreapp2.0\Properties\launchSettings.json
+C:\Users\Almir Tihak\Desktop\6-ispit_2019_06_25_start\25_06_2019\RS1_Ispit\bin\Debug\netcoreapp2.0\RS1_Ispit_asp.net_core.deps.json
+C:\Users\Almir Tihak\Desktop\6-ispit_2019_06_25_start\25_06_2019\RS1_Ispit\bin\Debug\netcoreapp2.0\RS1_Ispit_asp.net_core.runtimeconfig.json
+C:\Users\Almir Tihak\Desktop\6-ispit_2019_06_25_start\25_06_2019\RS1_Ispit\bin\Debug\netcoreapp2.0\RS1_Ispit_asp.net_core.runtimeconfig.dev.json
+C:\Users\Almir Tihak\Desktop\6-ispit_2019_06_25_start\25_06_2019\RS1_Ispit\bin\Debug\netcoreapp2.0\RS1_Ispit_asp.net_core.dll
+C:\Users\Almir Tihak\Desktop\6-ispit_2019_06_25_start\25_06_2019\RS1_Ispit\bin\Debug\netcoreapp2.0\RS1_Ispit_asp.net_core.pdb
+C:\Users\Almir Tihak\Desktop\6-ispit_2019_06_25_start\25_06_2019\RS1_Ispit\obj\Debug\netcoreapp2.0\RS1_Ispit_asp.net_core.csprojAssemblyReference.cache
+C:\Users\Almir Tihak\Desktop\6-ispit_2019_06_25_start\25_06_2019\RS1_Ispit\obj\Debug\netcoreapp2.0\RS1_Ispit_asp.net_core.AssemblyInfoInputs.cache
+C:\Users\Almir Tihak\Desktop\6-ispit_2019_06_25_start\25_06_2019\RS1_Ispit\obj\Debug\netcoreapp2.0\RS1_Ispit_asp.net_core.AssemblyInfo.cs
+C:\Users\Almir Tihak\Desktop\6-ispit_2019_06_25_start\25_06_2019\RS1_Ispit\obj\Debug\netcoreapp2.0\RS1_Ispit_asp.net_core.dll
+C:\Users\Almir Tihak\Desktop\6-ispit_2019_06_25_start\25_06_2019\RS1_Ispit\obj\Debug\netcoreapp2.0\RS1_Ispit_asp.net_core.pdb
