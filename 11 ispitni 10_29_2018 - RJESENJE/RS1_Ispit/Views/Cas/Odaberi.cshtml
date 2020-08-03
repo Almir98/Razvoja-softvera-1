@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewData["Title"] = "Odaberi";
+}
+
+@model Cas_OdaberiVM
+
+<h2>Odaberi za nastavnika @Model.nastavnik</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Datum</th>
+            <th>Skolska godina / odjeljenje</th>
+            <th>Predmet</th>
+            <th>Odsutni ucenici</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model._lista)
+        {
+            <tr>
+                <td>@i.datum</td>
+                <td>@i.skola</td>
+                <td>@i.predmet</td>
+                <td>
+                    @foreach (var o in i._odsutni)
+                    {
+                        <span>@o,</span>
+                    }
+                </td>
+                <td>
+                    <a class="btn btn-warning" href="/Cas/Uredi?odrzaniID=@i.odrzaniID">Uredi</a>
+                 </td>
+                <td>
+                    <a class="btn btn-danger" href="/Cas/Izbrisi?odrzaniID=@i.odrzaniID">Izbrisi</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br /><br />
+
+<a class="btn btn-primary" href="/Cas/Dodaj?nastavnikID=@Model.nastavnikID">Dodaj novi cas</a>

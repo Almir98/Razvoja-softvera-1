@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+@model Stavke_IndexVM
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Ucenik</th>
+            <th>Ocjena</th>
+            <th>Prisutan</th>
+            <th>Opravdano prisutan</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model._lista)
+        {
+        <tr>
+            <td>@i.ucenik</td>
+            <td>
+                @if (i.prisutan)
+                {
+                    <input id="@i.stavkaID" value="@i.ocjena" />
+
+                    <a class="btn btn-primary" ajax-poziv="daa" ajax-rezultat="divID" asp-action="SnimiOcjena" asp-route-stavkaID="@i.stavkaID" asp-route-ocjena="@i.ocjena" ajax-id="@i.stavkaID">Snimi</a>
+                }
+                else
+                {
+                }
+            </td>
+            <td>
+                @if (i.prisutan)
+                {
+                    <a class="btn btn-success" ajax-poziv="da" asp-action="Prisutan" ajax-rezultat="divID" asp-route-stavkaID="@i.stavkaID">Prisutan</a>
+                }
+                else
+                {
+                    <a class="btn btn-danger" ajax-poziv="da" asp-action="Prisutan" ajax-rezultat="divID" asp-route-stavkaID="@i.stavkaID">Odsutan</a>
+                }
+            </td>
+            <td>
+                @if (!i.prisutan && i.opravdano)
+                {
+                    <p>DA</p>
+                }
+                else if(!i.prisutan && !i.opravdano)
+                {
+                    <p>NE</p>
+                }
+                else 
+                { 
+                }
+            </td>
+            <td>
+                @if (i.prisutan)
+                {
+                    <a class="btn btn-primary" ajax-poziv="da" asp-action="UrediPrisutan" ajax-rezultat="divID" asp-route-stavkaID="@i.stavkaID">Uredi prisutan</a>
+                }
+                else
+                {
+                    <a class="btn btn-info" ajax-poziv="da" asp-action="UrediOdsutan" ajax-rezultat="divID" asp-route-stavkaID="@i.stavkaID">Uredi odsutan</a>
+                }
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

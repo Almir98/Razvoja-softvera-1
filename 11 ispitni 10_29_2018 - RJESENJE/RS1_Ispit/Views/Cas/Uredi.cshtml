@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewData["Title"] = "Uredi";
+}
+
+<h2>Uredi</h2>
+
+@model Cas_UrediVM
+
+
+<form asp-action="SnimiUredi">
+
+    <input asp-for="odrzaniID" hidden />
+
+    <input asp-for="nastavnikID" hidden />
+
+
+    Datum:<br />
+    <input asp-for="datum" readonly />
+    <br /><br />
+
+    Odjeljenje / predmet:<br />
+    <input asp-for="skupa" readonly />
+    <br /><br />
+
+    Napomena:<br />
+    <input asp-for="napomena" />
+    <br /><br />
+
+
+    <input type="submit" class="btn btn-primary" value="Snimi" />
+</form>
+
+
+<br /><br />
+
+<div id="divID" style="border:2px dashed"></div>
+
+
+<script>
+
+    $(document).ready(function (event) {
+
+        $.get("/AjaxStavke/Index?odrzaniID=@Model.odrzaniID", function (rezultat, status) {
+
+            $("#divID").html(rezultat);
+        });
+    });
+</script>
